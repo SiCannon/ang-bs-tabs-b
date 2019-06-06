@@ -1,0 +1,16 @@
+<!-- note there's no data-toggle="tab" or href="#something" because we do tab switching manually
+the bootstrap styles are used but not the javascript-->
+
+<div>
+
+    <ul class="nav nav-tabs">
+        <li *ngFor="let tab of tabs" [class.active]="tab.active">
+            <a href="javascript:void(0);" (click)="activateTab(tab)">{{tab.title}}</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <ng-content></ng-content>
+    </div>
+
+</div>
